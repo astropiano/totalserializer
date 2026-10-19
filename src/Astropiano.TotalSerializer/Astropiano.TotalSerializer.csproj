@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net9.0;net10.0</TargetFrameworks>        
+        <LangVersion>latest</LangVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageOutputPath>$(OutDir)..\packages-local</PackageOutputPath>
+        <PackageId>Astropiano.TotalSerializer</PackageId>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\reflectiontools\src\Astropiano.ReflectionTools\Astropiano.ReflectionTools.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="GitVersion.MsBuild" Version="6.2.0">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="System.Memory" Version="4.5.3" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <Content Include="..\..\.gitignore">
+            <Link>.gitignore</Link>
+        </Content>
+        <Content Include="..\..\README.adoc">
+          <Link>README.adoc</Link>
+        </Content>
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Compile Remove="Debug\FieldLevel.cs" />
+    </ItemGroup>
+
+</Project>

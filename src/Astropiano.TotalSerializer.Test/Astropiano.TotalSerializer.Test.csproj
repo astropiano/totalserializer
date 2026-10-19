@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net9.0;net10.0</TargetFrameworks>
+        <RootNamespace>Astropiano.TotalSerializer.Test</RootNamespace>
+        <PackageId>Astropiano.TotalSerializer.Test</PackageId>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentAssertions" Version="8.2.0" />
+      <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+      <PackageReference Include="xunit" Version="2.9.3" />
+      <PackageReference Include="xunit.runner.visualstudio" Version="3.0.2">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\reflectiontools\src\Astropiano.ReflectionTools\Astropiano.ReflectionTools.csproj" />
+        <ProjectReference Include="..\Astropiano.TotalSerializer\Astropiano.TotalSerializer.csproj" />
+    </ItemGroup>
+
+    <!--
+    <ItemGroup>
+      <Reference Include="System.Windows.Forms" Condition="'$(TargetFramework)' == 'net472'" />
+      <Reference Include="System.Windows.Forms" />
+    </ItemGroup>
+   -->
+    
+    <ItemGroup>
+      <Folder Include="TestCases\CustomSerialization" />
+      <Folder Include="TestCases\Notifying\" />
+    </ItemGroup>
+    
+    
+    <ItemGroup>
+      <Compile Remove="Topics\NewtonsoftTypes.cs" />
+    </ItemGroup>
+
+</Project>
