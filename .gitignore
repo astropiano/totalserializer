@@ -291,3 +291,6 @@ __pycache__/
 # Intentional: un-ignore the feed dir until packages hit a real feed.
 !src/packages-local/
 !src/packages-local/*.nupkg
+
+# misc
+.DS_Store
