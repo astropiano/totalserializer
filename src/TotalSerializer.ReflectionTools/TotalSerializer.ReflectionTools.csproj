@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks Condition="'$(PIPELINE_FRAMEWORK)' == ''">net6.0;net7.0;net8.0;net9.0;net10.0</TargetFrameworks>
+        <TargetFramework Condition="'$(PIPELINE_FRAMEWORK)' == 'net6.0'">net6.0</TargetFramework>
+        <TargetFramework Condition="'$(PIPELINE_FRAMEWORK)' == 'net7.0'">net7.0</TargetFramework>
+        <TargetFramework Condition="'$(PIPELINE_FRAMEWORK)' == 'net8.0'">net8.0</TargetFramework>
+        <TargetFramework Condition="'$(PIPELINE_FRAMEWORK)' == 'net9.0'">net9.0</TargetFramework>
+        <TargetFramework Condition="'$(PIPELINE_FRAMEWORK)' == 'net10.0'">net10.0</TargetFramework>
+        <Nullable>disable</Nullable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageOutputPath>$(MSBuildProjectDirectory)\..\..\packages-local</PackageOutputPath>
+        <PackageId>TotalSerializer.ReflectionTools</PackageId>
+        <PackageReadmeFile>NuGet.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="NuGet.md" Pack="true" PackagePath="\"/>
+        <None Include="..\..\LICENSE">
+            <Link>LICENSE</Link>
+        </None>
+        <None Include="..\..\README.adoc">
+            <Link>README.adoc</Link>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="GitVersion.MsBuild" Version="6.2.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+</Project>

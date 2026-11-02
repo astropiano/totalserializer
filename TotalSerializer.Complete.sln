@@ -4,19 +4,19 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 
 # TotalSerializer Projects
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Astropiano.TotalSerializer", "src\Astropiano.TotalSerializer\Astropiano.TotalSerializer.csproj", "{9CCCFF2E-31A1-42FD-B52C-96B583A6CCE5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotalSerializer", "src\TotalSerializer\TotalSerializer.csproj", "{9CCCFF2E-31A1-42FD-B52C-96B583A6CCE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Astropiano.TotalSerializer.Test", "src\Astropiano.TotalSerializer.Test\Astropiano.TotalSerializer.Test.csproj", "{775F7AE3-7EA8-4524-84B9-6616B2996952}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotalSerializer.Test", "src\TotalSerializer.Test\TotalSerializer.Test.csproj", "{775F7AE3-7EA8-4524-84B9-6616B2996952}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Astropiano.TotalSerializer.Comparison", "src\Astropiano.TotalSerializer.Comparison\Astropiano.TotalSerializer.Comparison.csproj", "{6A4FB5AA-5A88-46B5-8634-910DFA07AEB2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotalSerializer.Comparison", "src\TotalSerializer.Comparison\TotalSerializer.Comparison.csproj", "{6A4FB5AA-5A88-46B5-8634-910DFA07AEB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Astropiano.TotalSerializer.Performance.Test", "src\Astropiano.TotalSerializer.Performance.Test\Astropiano.TotalSerializer.Performance.Test.csproj", "{6456B593-A723-4C39-873E-03B9326E6C65}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotalSerializer.Performance.Test", "src\TotalSerializer.Performance.Test\TotalSerializer.Performance.Test.csproj", "{6456B593-A723-4C39-873E-03B9326E6C65}"
 EndProject
 
 # ReflectionTools Projects (dependencies)
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Astropiano.ReflectionTools", "..\reflectiontools\src\Astropiano.ReflectionTools\Astropiano.ReflectionTools.csproj", "{6C17BDEC-943A-4A5A-A909-74E77310A44C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotalSerializer.ReflectionTools", "src\TotalSerializer.ReflectionTools\TotalSerializer.ReflectionTools.csproj", "{6C17BDEC-943A-4A5A-A909-74E77310A44C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Astropiano.ReflectionTools.Test", "..\reflectiontools\src\Astropiano.ReflectionTools.Test\Astropiano.ReflectionTools.Test.csproj", "{94C627BB-6A20-4F7E-9AEF-9BDB4517B857}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotalSerializer.ReflectionTools.Test", "src\TotalSerializer.ReflectionTools.Test\TotalSerializer.ReflectionTools.Test.csproj", "{94C627BB-6A20-4F7E-9AEF-9BDB4517B857}"
 EndProject
 
 Global

@@ -287,10 +287,3 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
-# Local NuGet feed consumed by sibling repos (../<repo> in nuget.config).
-# Intentional: un-ignore the feed dir until packages hit a real feed.
-!src/packages-local/
-!src/packages-local/*.nupkg
-
-# misc
-.DS_Store
