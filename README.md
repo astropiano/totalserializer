@@ -128,7 +128,9 @@ dotnet build TotalSerializer.Complete.sln -c Release
 dotnet test TotalSerializer.Complete.sln -c Release
 ```
 
-Building the library projects produces NuGet packages in `packages-local/` (see `GeneratePackageOnBuild`). Continuous integration and nuget.org publishing are not wired up yet.
+Building the library projects produces NuGet packages in `packages-local/` (see `GeneratePackageOnBuild`).
+
+GitHub Actions builds and tests the solution on every push and pull request. Pushing a `v*` tag additionally packs and publishes the NuGet packages to nuget.org.
 
 ## Security
 
