@@ -15,7 +15,7 @@ namespace TotalSerializer.SpecialSerialization
                 new CultureInfoSerializer(),
                 new CompareInfoSerializer(),
                 new CancellationTokenSourceSerializer(),
-#if !(NETCOREAPP)
+#if NETFRAMEWORK
                 new TransparentProxySerializer(),
 #endif
                 new DictionarySerializer()

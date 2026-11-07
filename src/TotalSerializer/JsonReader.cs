@@ -134,7 +134,7 @@ namespace TotalSerializer
                             return;
                         }
 /*                        
-#if !(NETCOREAPP)
+#if NETFRAMEWORK
                         else if(type.IsGenericType && type.GetGenericTypeDefinition() ==  typeof(ConcurrentDictionary<,>))
                         {
                             currentIndex+=3;

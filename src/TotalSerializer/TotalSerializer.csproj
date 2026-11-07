@@ -1,15 +1,21 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net9.0;net10.0</TargetFrameworks>        
-        <LangVersion>latest</LangVersion>
+        <TargetFrameworks>netstandard2.0;net9.0;net10.0</TargetFrameworks>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageOutputPath>$(MSBuildProjectDirectory)\..\..\packages-local</PackageOutputPath>
         <PackageId>TotalSerializer</PackageId>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <Description>Serializes the complete state of .NET object graphs - including private fields, events and delegates - to JSON, and deserializes instances back fully functional.</Description>
+        <PackageTags>serializer;json;serialization;deserialization;deep-copy;object-graph;delegates;events;reflection;state</PackageTags>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\TotalSerializer.ReflectionTools\TotalSerializer.ReflectionTools.csproj" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+      <PackageReference Include="System.Memory" Version="4.5.5" />
     </ItemGroup>
 
     <ItemGroup>
@@ -17,20 +23,15 @@
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
-      <PackageReference Include="System.Memory" Version="4.5.3" />
     </ItemGroup>
-    
+
     <ItemGroup>
-        <Content Include="..\..\.gitignore">
+        <Content Include="..\..\.gitignore" Pack="false">
             <Link>.gitignore</Link>
         </Content>
-        <Content Include="..\..\README.md">
+        <None Include="..\..\README.md" Pack="true" PackagePath="\">
           <Link>README.md</Link>
-        </Content>
-    </ItemGroup>
-    
-    <ItemGroup>
-      <Compile Remove="Debug\FieldLevel.cs" />
+        </None>
     </ItemGroup>
 
 </Project>

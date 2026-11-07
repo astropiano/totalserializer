@@ -117,7 +117,7 @@ namespace TotalSerializer
         {
             if (originalObjId == null)
             {
-#if !(NETCOREAPP)
+#if NETFRAMEWORK
                 // Identifying the need for this special serializer must be done manually, we cannot check the type
                 // but need to call IsTransparentProxy
                 if (System.Runtime.Remoting.RemotingServices.IsTransparentProxy(value))

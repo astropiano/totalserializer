@@ -1,0 +1,23 @@
+<Project>
+
+    <PropertyGroup>
+        <LangVersion>latest</LangVersion>
+        <Authors>astropiano</Authors>
+        <Copyright>Copyright (c) 2026 astropiano</Copyright>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/astropiano/totalserializer</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/astropiano/totalserializer</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageIcon>totalserializer_incircle.png</PackageIcon>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <DebugType>embedded</DebugType>
+        <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="$(MSBuildThisFileDirectory)branding\totalserializer_incircle.png"
+              Pack="true" PackagePath="\" Visible="false" />
+    </ItemGroup>
+
+</Project>

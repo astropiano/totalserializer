@@ -162,7 +162,7 @@ namespace TotalSerializer.ReflectionTools
              if (!_writers.TryGetValue(memberKey, out writer))
              {
                  //TODO: try/catch
-#if !(NETCOREAPP)
+#if NETFRAMEWORK
                  if (fieldInfo.IsInitOnly)
                  {
                      writer = new ReflectionMemberWriter(fieldInfo);

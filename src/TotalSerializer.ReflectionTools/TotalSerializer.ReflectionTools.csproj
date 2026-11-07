@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks Condition="'$(PIPELINE_FRAMEWORK)' == ''">net6.0;net7.0;net8.0;net9.0;net10.0</TargetFrameworks>
+        <TargetFrameworks Condition="'$(PIPELINE_FRAMEWORK)' == ''">netstandard2.0;net6.0;net7.0;net8.0;net9.0;net10.0</TargetFrameworks>
         <TargetFramework Condition="'$(PIPELINE_FRAMEWORK)' == 'net6.0'">net6.0</TargetFramework>
         <TargetFramework Condition="'$(PIPELINE_FRAMEWORK)' == 'net7.0'">net7.0</TargetFramework>
         <TargetFramework Condition="'$(PIPELINE_FRAMEWORK)' == 'net8.0'">net8.0</TargetFramework>
@@ -12,6 +12,8 @@
         <PackageOutputPath>$(MSBuildProjectDirectory)\..\..\packages-local</PackageOutputPath>
         <PackageId>TotalSerializer.ReflectionTools</PackageId>
         <PackageReadmeFile>NuGet.md</PackageReadmeFile>
+        <Description>Efficient reflection helpers used by TotalSerializer: cached member access, fast field/property readers and writers via emitted IL, and CLR type-name utilities.</Description>
+        <PackageTags>reflection;il-emit;member-access;field;property;serializer</PackageTags>
     </PropertyGroup>
 
     <ItemGroup>
@@ -19,9 +21,11 @@
         <None Include="..\..\LICENSE">
             <Link>LICENSE</Link>
         </None>
-        <None Include="..\..\README.adoc">
-            <Link>README.adoc</Link>
-        </None>
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+        <PackageReference Include="System.Reflection.Emit.Lightweight" Version="4.7.0" />
+        <PackageReference Include="System.Reflection.Emit.ILGeneration" Version="4.7.0" />
     </ItemGroup>
 
     <ItemGroup>
