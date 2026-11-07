@@ -27,7 +27,14 @@ jobs:
         run: dotnet restore TotalSerializer.Complete.sln
 
       - name: Build
-        run: dotnet build TotalSerializer.Complete.sln -c Release --no-restore
+        run: |
+          VERSION_ARGS=""
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            # Pin the package version to the tag name; GitVersion's branch-label
+            # naming does not produce a clean version for tag builds.
+            VERSION_ARGS="-p:Version=${GITHUB_REF_NAME#v} -p:DisableGitVersionTask=true"
+          fi
+          dotnet build TotalSerializer.Complete.sln -c Release --no-restore $VERSION_ARGS
 
       - name: Test
         run: dotnet test TotalSerializer.Complete.sln -c Release --no-build
